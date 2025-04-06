@@ -35,13 +35,13 @@ interface User {
   phone?: string;
 }
 
-interface UserProfileProps {
-  params: {
-    id: string;
-  };
+// Add this type to properly type your page params
+interface PageProps {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export default function UserProfile({ params }: UserProfileProps) {
+export default function UserProfile({ params }: PageProps) {
   const userId = Number.parseInt(params.id);
   const user = users.find((user) => user.id === userId) as User | undefined;
   const [activeTab, setActiveTab] = useState("overview");
