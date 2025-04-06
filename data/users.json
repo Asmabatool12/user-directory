@@ -1,0 +1,190 @@
+[
+  {
+    "id": 1,
+    "name": "Alex Morgan",
+    "role": "UX Designer",
+    "description": "Passionate about creating intuitive user experiences with a focus on accessibility and inclusive design. Specializes in user research and prototyping to create products that truly meet user needs.",
+    "skills": [
+      "UI/UX",
+      "Figma",
+      "Accessibility",
+      "User Research",
+      "Prototyping",
+      "Design Systems"
+    ],
+    "location": "San Francisco, CA",
+    "email": "alex.morgan@example.com",
+    "company": "Design Forward Inc.",
+    "experience": [
+      {
+        "role": "UX Designer",
+        "company": "Design Forward Inc.",
+        "period": "2021 - Present",
+        "description": "Lead designer for multiple high-profile projects, focusing on creating accessible and intuitive interfaces."
+      },
+      {
+        "role": "UI Designer",
+        "company": "Creative Solutions",
+        "period": "2018 - 2021",
+        "description": "Designed user interfaces for web and mobile applications, collaborating closely with development teams."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Jordan Lee",
+    "role": "Frontend Developer",
+    "description": "Specializes in building responsive, performant web applications using modern JavaScript frameworks. Passionate about clean code and optimized user experiences.",
+    "skills": [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Tailwind CSS",
+      "JavaScript",
+      "CSS3",
+      "HTML5"
+    ],
+    "location": "Austin, TX",
+    "email": "jordan.lee@example.com",
+    "company": "TechStack Solutions",
+    "experience": [
+      {
+        "role": "Frontend Developer",
+        "company": "TechStack Solutions",
+        "period": "2020 - Present",
+        "description": "Developing modern web applications with React and Next.js, focusing on performance optimization and responsive design."
+      },
+      {
+        "role": "Web Developer",
+        "company": "Digital Creations",
+        "period": "2017 - 2020",
+        "description": "Built and maintained client websites using JavaScript, HTML, and CSS."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Taylor Kim",
+    "role": "Product Manager",
+    "description": "Strategic thinker with a knack for translating business requirements into user-centered product features. Experienced in leading cross-functional teams to deliver successful products.",
+    "skills": [
+      "Product Strategy",
+      "Agile",
+      "User Stories",
+      "Roadmapping",
+      "Market Research",
+      "Data Analysis"
+    ],
+    "location": "New York, NY",
+    "email": "taylor.kim@example.com",
+    "company": "Product Innovations Co.",
+    "experience": [
+      {
+        "role": "Product Manager",
+        "company": "Product Innovations Co.",
+        "period": "2019 - Present",
+        "description": "Leading product development from conception to launch, working closely with design, engineering, and marketing teams."
+      },
+      {
+        "role": "Associate Product Manager",
+        "company": "Tech Enterprises",
+        "period": "2016 - 2019",
+        "description": "Assisted in product development lifecycle, gathered user feedback, and helped prioritize feature development."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Casey Rivera",
+    "role": "Content Strategist",
+    "description": "Creates compelling content strategies that engage users and improve information architecture. Expert in SEO optimization and content management systems.",
+    "skills": [
+      "Content Strategy",
+      "SEO",
+      "Copywriting",
+      "Information Architecture",
+      "Content Management",
+      "Analytics"
+    ],
+    "location": "Chicago, IL",
+    "email": "casey.rivera@example.com",
+    "company": "Content First Media",
+    "experience": [
+      {
+        "role": "Content Strategist",
+        "company": "Content First Media",
+        "period": "2020 - Present",
+        "description": "Developing comprehensive content strategies for clients across various industries, with a focus on SEO and user engagement."
+      },
+      {
+        "role": "Content Writer",
+        "company": "Digital Marketing Agency",
+        "period": "2017 - 2020",
+        "description": "Created engaging content for websites, blogs, and social media platforms."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Morgan Zhang",
+    "role": "Full Stack Developer",
+    "description": "Builds end-to-end solutions with a focus on scalability, performance, and maintainable code. Experienced in both frontend and backend technologies.",
+    "skills": [
+      "Node.js",
+      "React",
+      "PostgreSQL",
+      "AWS",
+      "Docker",
+      "GraphQL",
+      "MongoDB"
+    ],
+    "location": "Seattle, WA",
+    "email": "morgan.zhang@example.com",
+    "company": "Full Stack Solutions",
+    "experience": [
+      {
+        "role": "Full Stack Developer",
+        "company": "Full Stack Solutions",
+        "period": "2021 - Present",
+        "description": "Developing complete web applications from database design to frontend implementation, with a focus on scalable architecture."
+      },
+      {
+        "role": "Backend Developer",
+        "company": "Server Technologies",
+        "period": "2018 - 2021",
+        "description": "Built robust backend systems using Node.js, Express, and various database technologies."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Riley Patel",
+    "role": "Accessibility Specialist",
+    "description": "Ensures digital products are accessible to all users, regardless of abilities or disabilities. Expert in WCAG guidelines and assistive technologies.",
+    "skills": [
+      "WCAG",
+      "Screen Readers",
+      "Accessibility Testing",
+      "Inclusive Design",
+      "HTML Semantics",
+      "ARIA"
+    ],
+    "location": "Portland, OR",
+    "email": "riley.patel@example.com",
+    "company": "Accessible Tech Inc.",
+    "experience": [
+      {
+        "role": "Accessibility Specialist",
+        "company": "Accessible Tech Inc.",
+        "period": "2019 - Present",
+        "description": "Conducting accessibility audits and providing recommendations to make digital products more inclusive and compliant with accessibility standards."
+      },
+      {
+        "role": "Frontend Developer",
+        "company": "Web Solutions",
+        "period": "2016 - 2019",
+        "description": "Developed websites with a strong focus on accessibility and inclusive design principles."
+      }
+    ]
+  }
+]
