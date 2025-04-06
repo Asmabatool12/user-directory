@@ -2,36 +2,20 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Star, Edit } from "lucide-react";
+import {
+  ArrowLeft,
+  Star,
+  Mail,
+  Phone,
+  Globe,
+  MapPin,
+  Edit,
+  Calendar,
+} from "lucide-react";
 import users from "@/data/users.json";
-import { useRouter } from "next/router"; // To access dynamic params
 
-export default function UserProfile() {
-  const router = useRouter();
-  const { id } = router.query; // Dynamically get the id from URL
-
-  if (!id || Array.isArray(id)) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-white">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">
-            User Not Found
-          </h1>
-          <p className="text-gray-600 mb-8">
-            The user you're looking for doesn't exist.
-          </p>
-          <Link
-            href="/"
-            className="px-6 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors text-sm font-medium"
-          >
-            Back to Directory
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  const userId = Number.parseInt(id.toString(), 10); // Convert id to number
+export default function UserProfile({ params }: { params: { id: string } }) {
+  const userId = Number.parseInt(params.id);
   const user = users.find((user) => user.id === userId);
   const [activeTab, setActiveTab] = useState("overview");
   const [isFavorite, setIsFavorite] = useState(false);
@@ -91,21 +75,23 @@ export default function UserProfile() {
                 </div>
               </div>
             </div>
+
             <div className="flex items-center space-x-3">
               <button
                 onClick={() => setIsFavorite(!isFavorite)}
                 className={`p-2 rounded-full ${
                   isFavorite ? "text-gray-900" : "text-gray-400"
-                }`}
+                } hover:bg-gray-100`}
                 aria-label={
                   isFavorite ? "Remove from favorites" : "Add to favorites"
                 }
               >
                 <Star size={20} fill={isFavorite ? "currentColor" : "none"} />
               </button>
-              <button className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium">
+
+              <button className="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center">
                 <Edit size={16} className="mr-2" />
-                Edit Profile
+                <span className="hidden sm:inline">Edit Profile</span>
               </button>
             </div>
           </div>
@@ -123,14 +109,80 @@ export default function UserProfile() {
                   {user.name.substring(0, 2).toUpperCase()}
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900">
-                    {user.name}
-                  </h2>
-                  <span className="inline-flex mt-1 sm:mt-0 items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-                    {user.role}
-                  </span>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
+                    <h2 className="text-2xl font-bold text-gray-900">
+                      {user.name}
+                    </h2>
+                    <span className="inline-flex mt-1 sm:mt-0 items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                      {user.role}
+                    </span>
+                  </div>
+                  <p className="text-gray-500 mt-1">
+                    {user.location || "San Francisco, CA"}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mt-3">
+                    {user.skills?.slice(0, 5).map((skill, index) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-600"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                    {user.skills?.length > 5 && (
+                      <span className="px-2 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-500">
+                        +{user.skills.length - 5}
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Content tabs */}
+          <div className="mb-8 border-b border-gray-200">
+            <div className="flex overflow-x-auto">
+              <button
+                onClick={() => setActiveTab("overview")}
+                className={`px-4 py-2 border-b-2 font-medium text-sm whitespace-nowrap ${
+                  activeTab === "overview"
+                    ? "border-gray-900 text-gray-900"
+                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                }`}
+              >
+                Overview
+              </button>
+              <button
+                onClick={() => setActiveTab("experience")}
+                className={`px-4 py-2 border-b-2 font-medium text-sm whitespace-nowrap ${
+                  activeTab === "experience"
+                    ? "border-gray-900 text-gray-900"
+                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                }`}
+              >
+                Experience
+              </button>
+              <button
+                onClick={() => setActiveTab("skills")}
+                className={`px-4 py-2 border-b-2 font-medium text-sm whitespace-nowrap ${
+                  activeTab === "skills"
+                    ? "border-gray-900 text-gray-900"
+                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                }`}
+              >
+                Skills
+              </button>
+              <button
+                onClick={() => setActiveTab("contact")}
+                className={`px-4 py-2 border-b-2 font-medium text-sm whitespace-nowrap ${
+                  activeTab === "contact"
+                    ? "border-gray-900 text-gray-900"
+                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                }`}
+              >
+                Contact
+              </button>
             </div>
           </div>
 
@@ -150,11 +202,10 @@ export default function UserProfile() {
                       <div className="prose prose-sm text-gray-600 max-w-none">
                         <p>{user.description}</p>
                         <p className="mt-4">
-                          {user.longDescription ||
-                            `${user.name} is a highly skilled professional with extensive experience in their field. 
-                          They are known for their attention to detail, creative problem-solving abilities, and dedication to delivering 
-                          exceptional results. Throughout their career, they have successfully collaborated with cross-functional teams 
-                          to achieve business objectives and drive innovation.`}
+                          {`${user.name} is a highly skilled professional with extensive experience in their field. 
+        They are known for their attention to detail, creative problem-solving abilities, and dedication to delivering 
+        exceptional results. Throughout their career, they have successfully collaborated with cross-functional teams 
+        to achieve business objectives and drive innovation.`}
                         </p>
                       </div>
                     </div>
