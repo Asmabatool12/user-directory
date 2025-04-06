@@ -14,9 +14,36 @@ import {
 } from "lucide-react";
 import users from "@/data/users.json";
 
-export default function UserProfile({ params }: { params: { id: string } }) {
+interface Experience {
+  role: string;
+  company: string;
+  period: string;
+  description: string;
+}
+
+interface User {
+  id: number;
+  name: string;
+  role: string;
+  description: string;
+  skills: string[];
+  location: string;
+  email: string;
+  company: string;
+  experience?: Experience[];
+  website?: string;
+  phone?: string;
+}
+
+interface UserProfileProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function UserProfile({ params }: UserProfileProps) {
   const userId = Number.parseInt(params.id);
-  const user = users.find((user) => user.id === userId);
+  const user = users.find((user) => user.id === userId) as User | undefined;
   const [activeTab, setActiveTab] = useState("overview");
   const [isFavorite, setIsFavorite] = useState(false);
 
