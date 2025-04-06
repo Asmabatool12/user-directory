@@ -203,9 +203,9 @@ export default function UserProfile({ params }: { params: { id: string } }) {
                         <p>{user.description}</p>
                         <p className="mt-4">
                           {`${user.name} is a highly skilled professional with extensive experience in their field. 
-        They are known for their attention to detail, creative problem-solving abilities, and dedication to delivering 
-        exceptional results. Throughout their career, they have successfully collaborated with cross-functional teams 
-        to achieve business objectives and drive innovation.`}
+                          They are known for their attention to detail, creative problem-solving abilities, and dedication to delivering 
+                          exceptional results. Throughout their career, they have successfully collaborated with cross-functional teams 
+                          to achieve business objectives and drive innovation.`}
                         </p>
                       </div>
                     </div>
